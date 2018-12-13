@@ -50,18 +50,213 @@
     </nav>
 
     <div class="jumbotron jumbotron-fluid text-center">
-		<img src="Portfolio/glitchart/a.JPG" alt="logo" style="width:500px;">
-		<img src="Portfolio/glitchart/b.JPG" alt="logo" style="width:500px;">
-		<img src="Portfolio/glitchart/glitch1.PNG" alt="logo" style="width:500px;">
-		<img src="Portfolio/glitchart/m.JPG" alt="logo" style="width:500px;">
-       <h1 class="display-4">Glitch Art</h1>
-       <p class="lead">Images are opened with Notepad, text-edited, and saved as a new image with a suprise.</p>
+		<img src="../../shibee.png" alt="logo" style="width:500px;">
+		<p class="lead">PImage bg;
+int y;
+
+char currentkey = '1';
+PImage b;
+
+void setup() {
+size(1667, 1667);
+// The background image must be the same size as the parameters
+// into the size() method. In this program, the size of the image
+// is 640 x 360 pixels.
+bg = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/shibe.png");
+}
+
+void draw() {
+background(bg);
+
+stroke(0, 0, 0);
+
+
+y++;
+if (y > height) {
+y = 0; 
+}
+// triggering the clear_print function
+if(keyPressed) {
+clear_print(); 
+}
+// triggering the newkeychoice
+if(mousePressed) {
+// testbox();
+newkeyChoice(); 
+}
+}
+
+void testbox() {
+fill(0);
+rect(0,0,100,100);
+rect(100,100,100,100);
+rect(34,56,100,100);
+rect(34,20,100,100);
+
+}
+
+void newkeyChoice() {
+// the key mapping if statements that you can change to do anything you want.
+// just make sure each key option has the a stroke or fill and then what type of 
+// graphic function
+//
+
+
+// key global variable contains whatever key was last pressed
+if (key == '1' ) {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/blue.png");
+image(b, mouseX, mouseY);
+} else if (key == '2') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/hat.png");
+image(b, mouseX, mouseY);
+
+}
+char currentkey = key;
+}
+
+
+void clear_print() {
+
+// these 2 options let you choose between clearing the background
+// and saveing the current image as a file.
+if (key == 'x' || key == 'X') {
+background(255);
+} else if (key == 'p' || key == 'P') {
+saveFrame("images/00sd_m-####.png");
+//this will save the name as the intials and a millis counting number.
+// it will always be larger in value then the last one.
+}
+
+
+}</p>
+		<img src="../../girl.png" alt="logo" style="width:500px;">
+		<p class="lead">char currentkey = '1';
+PImage b;
+
+void setup() {
+size(500, 500);
+background(255);
+smooth();
+}
+
+void draw() {
+
+// triggering the clear_print function
+if(keyPressed) {
+clear_print(); 
+}
+// triggering the newkeychoice
+if(mousePressed) {
+// testbox();
+newkeyChoice(); 
+}
+}
+
+
+void testbox() {
+fill(0);
+rect(0,0,100,100);
+rect(100,100,100,100);
+rect(34,56,100,100);
+rect(34,20,100,100);
+
+}
+
+void newkeyChoice() {
+// the key mapping if statements that you can change to do anything you want.
+// just make sure each key option has the a stroke or fill and then what type of 
+// graphic function
+//
+
+
+// key global variable contains whatever key was last pressed
+if (key == '1' ) {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/girl.png");
+image(b, mouseX, mouseY);
+} else if (key == '2') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/blouse.png");
+image(b, mouseX, mouseY);
+
+} else if (key == '3') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/dress.png");
+image(b, mouseX, mouseY);
+
+} else if (key == '4') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/princess.png");
+image(b, mouseX, mouseY);
+} else if (key == '5') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/red.png");
+image(b, mouseX, mouseY);
+} else if (key == '6') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/collar.png");
+image(b, mouseX, mouseY);
+} else if (key == '7') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/bow.png");
+image(b, mouseX, mouseY);
+
+} else if (key == '8') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/bow2.png");
+image(b, mouseX, mouseY);
+
+} else if (key == '9') {
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/hairclips.png");
+image(b, mouseX, mouseY);
+
+} else if (key == '0') {
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/flower.png");
+image(b, mouseX, mouseY);
+
+} else if (key == 'g') {
+
+//fill(random(200),random(200),random(200),90);
+//ellipse(mouseX, mouseY, 100, 100);
+
+//for this to work right has a image file with the corrent matching name
+// in the same folder as this file.
+
+b = loadImage("http://dma.sjsu.edu/art74.04/asimas/images/bead.png");
+image(b, mouseX, mouseY);
+
+}
+char currentkey = key;
+}
+
+
+void clear_print() {
+
+// these 2 options let you choose between clearing the background
+// and saveing the current image as a file.
+if (key == 'x' || key == 'X') {
+background(255);
+} else if (key == 'p' || key == 'P') {
+saveFrame("images/00sd_m-####.png");
+//this will save the name as the intials and a millis counting number.
+// it will always be larger in value then the last one.
+}
+
+
+}</p>
+		
+      <h1 class="display-4">Processing</h1>
+       <p class="lead">Interactive games made in Processing. All illustrations were made in Adobe Illustrator.</p>
+      
        <hr class="my-4">
        <p>Like what you see?</p>
        <p class="lead">
           <a class="btn btn-primary btn-lg" href="contactme.html" role="button">Contact Me</a>
        </p>
-    </div>
+  </div>
 <br/>
        <br/>
 <br/>
